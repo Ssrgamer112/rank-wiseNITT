@@ -1,0 +1,87 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fefefe;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.main-container {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #00b66d;
+    margin-bottom: 30px;
+}
+
+.predict-form {
+    max-width: 800px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.input {
+    padding: 14px 16px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.input:focus {
+    box-shadow: 0 0 12px #00ffe5;
+}
+
+.neon {
+    background: #fff;
+    border: 2px solid #00ffe5;
+    box-shadow: 0 0 10px #00ffe5, 0 0 20px #00ffe5 inset;
+}
+
+.btn {
+    grid-column: span 2;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #333;
+}

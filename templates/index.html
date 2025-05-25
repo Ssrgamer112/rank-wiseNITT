@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>JEE College Predictor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #0a3d62;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #0a3d62;
+        }
+        
+        form {
+            display: grid;
+            gap: 1.2rem;
+        }
+        
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        input[type="number"],
+        select {
+            padding: 0.6rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        button {
+            background-color: #0a3d62;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.2rem;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #1e5a89;
+        }
+        
+        .card-container {
+            margin-top: 2rem;
+        }
+        
+        .card-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+        
+        .college-box {
+            background: #ecf0f1;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+            flex: 1 1 calc(30% - 1rem);
+            margin: 0.5rem;
+        }
+        
+        .college-box h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        
+        .college-box p {
+            margin: 0.4rem 0;
+            color: #34495e;
+        }
+        
+        @media (max-width: 768px) {
+            .college-box {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JEE Main & Advanced College Predictor</h1>
+    </header>
+
+    <div class="container">
+        <h2>Find Your Eligible Colleges</h2>
+        <form method="POST" action="/">
+            <label for="rank">Your Rank:</label>
+            <input type="number" name="rank" id="rank" required />
+
+            <label for="category">Category:</label>
+            <select name="category" id="category" required>
+                <option value="OPEN">OPEN</option>
+                <option value="OBC-NCL">OBC-NCL</option>
+                <option value="EWS">EWS</option>
+                <option value="SC">SC</option>
+                <option value="ST">ST</option>
+            </select>
+
+            <label for="exam">Exam Type:</label>
+            <select name="exam" id="exam" required>
+                <option value="advanced">JEE Advanced (IITs)</option>
+                <option value="main">JEE Main (NITs, IIITs, GFTIs)</option>
+            </select>
+
+            <label for="state">Home State (Only for NITs, IIITs, GFTIs):</label>
+            <select name="state" id="state">
+                <option value="">-- Select State --</option>
+                <option value="andhra pradesh">Andhra Pradesh</option>
+                <option value="arunachal pradesh">Arunachal Pradesh</option>
+                <option value="assam">Assam</option>
+                <option value="bihar">Bihar</option>
+                <option value="chhattisgarh">Chhattisgarh</option>
+                <option value="delhi">Delhi</option>
+                <option value="goa">Goa</option>
+                <option value="gujarat">Gujarat</option>
+                <option value="haryana">Haryana</option>
+                <option value="himachal pradesh">Himachal Pradesh</option>
+                <option value="jammu and kashmir">Jammu and Kashmir</option>
+                <option value="jharkhand">Jharkhand</option>
+                <option value="karnataka">Karnataka</option>
+                <option value="kerala">Kerala</option>
+                <option value="madhya pradesh">Madhya Pradesh</option>
+                <option value="maharashtra">Maharashtra</option>
+                <option value="manipur">Manipur</option>
+                <option value="meghalaya">Meghalaya</option>
+                <option value="mizoram">Mizoram</option>
+                <option value="nagaland">Nagaland</option>
+                <option value="odisha">Odisha</option>
+                <option value="punjab">Punjab</option>
+                <option value="rajasthan">Rajasthan</option>
+                <option value="sikkim">Sikkim</option>
+                <option value="tamil nadu">Tamil Nadu</option>
+                <option value="telangana">Telangana</option>
+                <option value="tripura">Tripura</option>
+                <option value="uttar pradesh">Uttar Pradesh</option>
+                <option value="uttarakhand">Uttarakhand</option>
+                <option value="west bengal">West Bengal</option>
+                <option value="puducherry">Puducherry</option>
+            </select>
+
+            <button type="submit">Predict Colleges</button>
+        </form>
+
+        <div id="results">
+            {{ results|safe }}
+        </div>
+    </div>
+
+</body>
+
+</html>
