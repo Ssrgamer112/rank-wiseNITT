@@ -114,6 +114,13 @@
     <div class="container">
         <h2>Find Your Eligible Colleges</h2>
         <form method="POST" action="/">
+
+            <label for="exam">Exam Type:</label>
+            <select name="exam" id="exam" required>
+                <option value="advanced">JEE Advanced (IITs)</option>
+                <option value="main">JEE Main (NITs, IIITs, GFTIs)</option>
+            </select>
+
             <label for="rank">Your Rank:</label>
             <input type="number" name="rank" id="rank" required />
 
@@ -126,11 +133,13 @@
                 <option value="ST">ST</option>
             </select>
 
-            <label for="exam">Exam Type:</label>
-            <select name="exam" id="exam" required>
-                <option value="advanced">JEE Advanced (IITs)</option>
-                <option value="main">JEE Main (NITs, IIITs, GFTIs)</option>
+            <label for="gender">Gender:</label>
+            <select name="gender" id="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="donot-specify">Do not wish to Say</option>
             </select>
+
 
             <label for="state">Home State (Only for NITs, IIITs, GFTIs):</label>
             <select name="state" id="state">
